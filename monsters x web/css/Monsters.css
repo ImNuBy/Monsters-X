@@ -1,0 +1,341 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    
+    color: #fff;
+    overflow-y: auto;
+}
+
+.discord-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #7289da; /* Color primario de Discord */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#postulacion {
+    color: #fff;
+}
+
+/* Estilos para checkboxes personalizados */
+#roles-checkboxes .role {
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer; /* Cambiar el cursor al pasar sobre un rol */
+}
+
+#roles-checkboxes input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px; /* Ajustar la posición vertical del tic */
+    right: 5px; /* Ajustar la posición horizontal del tic */
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 0, 0, 0.2); /* Fondo borde transparente */
+    border: 1px solid #FF0000; /* Borde rojo */
+    border-radius: 50%; /* Hacer el tic circular */
+    text-align: center; /* Centrar el tic */
+    line-height: 20px; /* Centrar verticalmente el tic */
+}
+
+#roles-checkboxes input[type="checkbox"]:checked + .checkmark:after {
+    content: "✔";
+    color: #FF0000; /* Color rojo para el tic */
+    font-size: 14px; /* Tamaño de fuente del tic */
+    line-height: 1; /* Alinear verticalmente el tic */
+}
+
+
+
+/* Cambiar el color del texto de las opciones cuando el select está enfocado */
+select:focus option {
+    color: black; /* Cambiar el color del texto a negro */
+}
+
+/* Cambiar el estilo del desplegable para navegadores webkit (Chrome, Safari, etc.) */
+select::-webkit-select {
+    background-color: #000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: 1px solid #fff; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px; /* Espaciado interno */
+}
+
+/* Cambiar el estilo del desplegable para navegadores mozilla (Firefox) */
+select::-moz-select {
+    background-color: #000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: 1px solid #fff; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px; /* Espaciado interno */
+}
+
+/* Estilo adicional para el desplegable en general */
+select {
+    appearance: none; /* Ocultar la apariencia nativa del desplegable */
+}
+
+#postulacion select, #postulacion textarea {
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo transparente */
+    color: #fff; /* Fuente blanca */
+    border: 1px solid #fff; /* Borde blanco */
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+#postulacion select {
+    width: 100%;
+}
+
+#postulacion button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#postulacion button:hover {
+    background-color: #00FF00; /* Verde */
+    color: #fff;
+}
+
+
+.discord-link:hover {
+    background-color: #677bc4; /* Color de fondo al pasar el mouse */
+}
+
+
+
+.video-background {
+    position: fixed;
+    top: -50px; /* Sube el video 50 píxeles */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 50px); /* Ajusta la altura para cubrir la pantalla */
+    z-index: -1;
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Asegúrate de que el z-index sea alto para estar delante */
+    pointer-events: none; /* Desactiva la interacción con el contenedor de partículas */
+}
+section {
+    position: relative;
+    z-index: 1; /* Ajusta según sea necesario */
+}
+/* Contenido principal */
+.content {
+    position: relative;
+    z-index: 1; /* Asegúrate de que el z-index sea más bajo que el de particles-js */
+}
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid transparent;
+    position: relative;
+}
+
+header h1 {
+    color: #00FF00; /* Verde */
+    margin: 0;
+}
+
+/* Estilos para el menú de navegación */
+header nav {
+    margin-top: 10px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+section::before, section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #FF00FF, transparent);
+    animation: slide-horizontal 3s infinite, color-change 6s infinite;
+}
+
+section::before {
+    top: 0;
+    left: 0;
+}
+
+section::after {
+    bottom: 0;
+    right: 0;
+    animation-delay: 1.5s;
+}
+
+@keyframes slide-horizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        border-color: #FF00FF;
+    }
+    50% {
+        border-color: #00FFFF;
+    }
+    100% {
+        border-color: #FF00FF;
+    }
+}
+
+section h2, section h3 {
+    color: #00FF00; /* Verde */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+.title-background {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.title-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 100px;
+}
+
+.title-background h1 {
+    margin-top: 60px;
+    font-size: 2.5em;
+    color: white;
+}
+
+
+form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+/* Estilos para los controles de audio */
+#audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+ #audio-controls input {
+    margin-left: 10px;
+}
+
+#audio-controls input[type="range"] {
+    cursor: pointer;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00FF00; /* Verde */
+    color: #fff;
+}
+

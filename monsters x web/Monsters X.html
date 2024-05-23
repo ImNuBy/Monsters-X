@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="images/Monsters logo.png" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster X Esports Team</title>
+    <link rel="stylesheet" href="css/Monsters.css">
+    <script src="js/particles.min.js"></script>
+    <script src="js/Monsters.js" defer></script>
+</head>
+<body>
+    <!-- Configuración de particles.js -->
+<script>
+    var particlesConfig = {
+        // Tu configuración de particles.js aquí...
+    };
+</script>
+
+<!-- Inicialización de particles.js -->
+<script>
+    // Inicializa particles.js si está disponible
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', particlesConfig);
+    }
+</script>
+
+    <audio id="background-music" loop>
+        <source src="audio/fondo.ogg" type="audio/ogg">
+        <source src="audio/fondo.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="videos/exorcist 1.mp4" type="video/mp4">
+            <source src="videos/exorcist 2.mp4" type="video/mp4">
+            <source src="videos/exorcist 3.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    <div id="particles-js"></div> <!-- Canvas para particles.js -->
+    <div class="content">
+        <header>
+            <div class="title-background">
+                <img src="images/Monsters logo.png" alt="Monsters X Logo" class="title-logo">
+                <h1>Monster X Esports Team</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#requisitos">Requisitos</a></li>
+                    <li><a href="#jugadores">Jugadores</a></li>
+                    <li><a href="#postulacion">Postulación</a></li>
+                    <li><a href="#informacion-juego">Información del juego</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="requisitos">
+            <h2>Requisitos para unirse</h2>
+            <p>Rango mínimo: Mítico con al menos 20 estrellas.</p>
+            <p>Actitud: Proactiva, con ganas de mejorar y trabajar en equipo.</p>
+        </section>
+        <section id="jugadores">
+            <h2>Jugadores del equipo</h2>
+            <div class="jugador">
+                <h3>Jugador 1</h3>
+                <p>Rango: Mítico 100 Estrellas</p>
+                <p>Héroes más usados:</p>
+                <ul>
+                    <li>Gusion</li>
+                    <li>Selena</li>
+                    <li>Lancelot</li>
+                </ul>
+            </div>
+            <div class="jugador">
+                <h3>Jugador 2</h3>
+                <p>Rango: Mítico 80 Estrellas</p>
+                <p>Héroes más usados:</p>
+                <ul>
+                    <li>Khufra</li>
+                    <li>Grock</li>
+                    <li>Atlas</li>
+                </ul>
+            </div>
+            <div class="jugador">
+                <h3>Jugador 3</h3>
+                <p>Rango: Mítico 70 Estrellas</p>
+                <p>Héroes más usados:</p>
+                <ul>
+                    <li>Harith</li>
+                    <li>Esmeralda</li>
+                    <li>Lunox</li>
+                </ul>
+            </div>
+            <div class="jugador">
+                <h3>Jugador 4</h3>
+                <p>Rango: Mítico 90 Estrellas</p>
+                <p>Héroes más usados:</p>
+                <ul>
+                    <li>Granger</li>
+                    <li>Bruno</li>
+                    <li>Claude</li>
+                </ul>
+            </div>
+            <div class="jugador">
+                <h3>Jugador 5</h3>
+                <p>Rango: Mítico 85 Estrellas</p>
+                <p>Héroes más usados:</p>
+                <ul>
+                    <li>Chou</li>
+                    <li>Jawhead</li>
+                    <li>Thamuz</li>
+                </ul>
+            </div>
+        </section>
+        <section id="postulacion">
+            <h2>Postúlate para unirte a Monster X</h2>
+            <form id="form-postulacion" method="post" action="/php/Monsters.php">
+                <label for="servidor">Servidor de la cuenta:</label>
+                <input type="text" id="servidor" name="servidor" required>
+                <label for="id-jugador">ID del jugador:</label>
+                <input type="text" id="id-jugador" name="id-jugador" required>
+                <label for="rango">Rango actual:</label>
+                <select id="rango" name="rango" required>
+                    <option value="20-29">20-29 estrellas</option>
+                    <option value="30-39">30-39 estrellas</option>
+                    <option value="40-49">40-49 estrellas</option>
+                    <option value="50-59">50-59 estrellas</option>
+                    <option value="60-69">60-69 estrellas</option>
+                    <option value="70-79">70-79 estrellas</option>
+                    <option value="80-89">80-89 estrellas</option>
+                    <option value="90-99">90-99 estrellas</option>
+                    <option value="100+">100 estrellas o más</option>
+                </select>
+
+                <!-- Selección de roles -->
+                <label>Roles que juegas (elige 3):</label>
+                <div id="roles-checkboxes">
+                    <label class="role"><input type="checkbox" name="roles[]" value="Combatiente">Combatiente<span class="checkmark"></span></label>
+                    <label class="role"><input type="checkbox" name="roles[]" value="Roam">Roam<span class="checkmark"></span></label>
+                    <label class="role"><input type="checkbox" name="roles[]" value="Adc">ADC<span class="checkmark"></span></label>
+                    <label class="role"><input type="checkbox" name="roles[]" value="Mago">Mago<span class="checkmark"></span></label>
+                    <label class="role"><input type="checkbox" name="roles[]" value="Jungla">Jungla<span class="checkmark"></span></label>
+                </div>
+
+                <!-- Selección de héroes -->
+                <label for="personaje1">Personaje 1 que usas:</label>
+                <input type="text" id="personaje1" name="personaje1" required>
+                <label for="personaje2">Personaje 2 que usas:</label>
+                <input type="text" id="personaje2" name="personaje2" required>
+                <label for="personaje3">Personaje 3 que usas:</label>
+                <input type="text" id="personaje3" name="personaje3" required>
+
+                <button type="submit">Enviar</button>
+                <p id="roles-error" style="color: red; display: none;">¡Selecciona solo 3 roles!</p>
+            </form>
+            <a href="https://discord.com/invite/MonsterX" target="_blank" class="discord-link">Enlace para unirte a nuestro Discord</a>
+        </section>
+        <section id="informacion-juego">
+            <h2>Tips</h2>
+            <h3>Tips de macro game</h3>
+            <p>Control de objetivos: Prioriza la tortuga y el Lord para obtener ventajas estratégicas.</p>
+            <p>Rotaciones: Desplázate eficientemente entre líneas para apoyar a tus compañeros y presionar al enemigo.</p>
+            <h3>Tips de micro game</h3>
+            <p>Posicionamiento: Mantente en una posición segura para maximizar tu daño y minimizar el riesgo.</p>
+            <p>Mecánicas de héroe: Domina las habilidades de tus héroes preferidos para optimizar su rendimiento en combate.</p>
+        </section>
+    </div>
+
+    <div id="audio-controls">
+        <label for="volume-slider">Volumen:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+        <button id="play-button">Reproducir música</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backgroundMusic = document.getElementById('background-music');
+            const volumeControl = document.getElementById('volume-slider');
+            const playButton = document.getElementById('play-button');
+
+            // Reproducir música de fondo al hacer clic en el botón
+            playButton.addEventListener('click', function() {
+                backgroundMusic.play().then(() => {
+                    console.log('Música de fondo reproducida correctamente.');
+                    playButton.style.display = 'none';
+                }).catch(error => {
+                    console.error('Error al reproducir la música de fondo:', error);
+                });
+            });
+
+            // Control de volumen
+            volumeControl.addEventListener('input', function() {
+                backgroundMusic.volume = volumeControl.value;
+            });
+
+            // Eventos para la reproducción de audio
+            backgroundMusic.addEventListener('canplaythrough', function() {
+                console.log('El archivo de audio se ha cargado completamente.');
+            });
+
+            backgroundMusic.addEventListener('error', function() {
+                console.error('Error al cargar el archivo de audio.');
+            });
+        });
+
+        
+    </script>
+
+    <!-- Configuración de particles.js -->
+    <script>
+        
+        var particlesConfig = {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 600 // Reducir el área de interacción
+                    }
+                },
+                "color": {
+                    "value": "#ff0000" // Cambiar el color a rojo
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5, // Aumentar el tamaño de las partículas
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 200, // Reducir la distancia entre partículas
+                    "color": "#ff0000", // Cambiar el color de las líneas a rojo
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400, // Reducir la distancia de agarre
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100 // Reducir la distancia de repulsión
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true,
+            "config_demo": {
+                "hide_card": false,
+                "background_color": "#b61924",
+                "background_image": "",
+                "background_position": "50% 50%",
+                "background_repeat": "no-repeat",
+                "background_size": "cover"
+            }
+        };
+    </script>
+    
+</body>
+</html>
